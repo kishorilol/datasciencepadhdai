@@ -15,7 +15,7 @@ print('The modulus of',num_1,'and',num_2,'is',num_1//num_2)
 #task 4
 num_1=int(input('Enter Your First Number: '))
 num_2=int(input('Enter Your Second Number: '))
-operator=input('Enter which aritmetic operation to perform + for addition, - for substraction, * for multiplication, / for division, ** for power or // for modulus:')
+operator=input('Enter which aritmetic operation to perform + for addition, - for substraction, * for multiplication, / for division, ** for power, // for floor or % for modulus:')
 if operator == '+':
     result=num_1+num_2
 elif operator=='-':
