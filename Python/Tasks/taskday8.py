@@ -1,4 +1,4 @@
-#task: make a atm machine that with user data
+#task: make a atm machine with filehandling
 import json
 
 def getData():
@@ -15,10 +15,18 @@ def getFileData():
 
 def register():
     username,password=getData()
-    data={'username':username,'password':password,'balance':0}
-    file=open('userdata.txt','a')
-    file.write(json.dumps(data)+'*')
-    file.close()
+    veri=getFileData()
+    for user in veri:
+        if user!="":
+            dict_cred=json.loads(user)
+            if dict_cred["username"]==username:
+                print('username already used')
+                break
+    else:
+        data={'username':username,'password':password,'balance':0}
+        file=open('userdata.txt','a')
+        file.write(json.dumps(data)+'*')
+        file.close()
 
 def update(update_data):
     file=open('userdata.txt','w')
@@ -86,7 +94,7 @@ def login():
         print('login failed')
 
 while True:
-    choice=input('Enter 1. for register 2. for login or 3. to exit')
+    choice=input('Enter 1. for register 2. for login or 3. to exit: ')
     match choice:
         case '1':
             register()
