@@ -6,6 +6,7 @@ class Book:
         self.name=name
         self.author=author
         self.type=type
+        
 
 class Member:
     
@@ -77,6 +78,7 @@ class Library():
         else:
             print('Book not found')
         file.close()
+
 
 lib=Library()
 print('\n\n ##### Library Management System ##### \n\n')
